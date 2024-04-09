@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492295026226",
+    "project_id": "turfbookingapplicationforadmin",
+    "storage_bucket": "turfbookingapplicationforadmin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492295026226:android:abb92d015b61bd831aee2b",
+        "android_client_info": {
+          "package_name": "fathima.turf_booking_application_for_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPcpQeqa7DrCT4j_knoAe5X0lO-oKJGxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
