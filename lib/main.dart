@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:turf_booking_application_for_admin/model/backend/firebase_options.dart';
-import 'package:turf_booking_application_for_admin/view/login/screen/login_screen.dart';
+
+import 'view/homescreen/screen/homescreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),
-      home: const LoginScreen(),
+      home: const HomeScreen(),
     );
   }
 }
