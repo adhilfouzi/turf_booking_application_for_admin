@@ -7,7 +7,6 @@ class MyTextField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
-  final String? labelText;
   final bool obscureText;
   final String? Function(String?)? validator;
 
@@ -22,36 +21,54 @@ class MyTextField extends StatelessWidget {
     this.obscureText = false,
     this.icon,
     this.validator,
-    this.labelText,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height * 0.0112,
-          horizontal: MediaQuery.of(context).size.width * 0.04),
-      child: TextFormField(
-        controller: controller,
-        keyboardType: keyboardType,
-        textInputAction: textInputAction,
-        obscureText: obscureText,
-        validator: validator,
-        decoration: InputDecoration(
-          hintText: hintText,
-          labelText: labelText ?? hintText,
-          filled: true,
-          fillColor: CustomColor.secondarybackgroundColor,
-          suffixIcon: icon != null ? Icon(icon) : null,
-          border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
-            borderRadius: BorderRadius.circular(10),
+        vertical: MediaQuery.of(context).size.height * 0.0112,
+        horizontal: MediaQuery.of(context).size.width * 0.04,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            hintText,
+            style: const TextStyle(
+              color: Colors.white, // Adjust color for dark mode
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: CustomColor.mainColor),
-            borderRadius: BorderRadius.circular(10),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
-        ),
+          TextFormField(
+            controller: controller,
+            keyboardType: keyboardType,
+            textInputAction: textInputAction,
+            obscureText: obscureText,
+            validator: validator,
+            style: const TextStyle(
+                color: Colors.white), // Text color for dark mode
+            decoration: InputDecoration(
+              hintText: hintText,
+              fillColor: CustomColor.secondarybackgroundColor,
+              hintStyle: const TextStyle(
+                  color: Colors.white54), // Hint text color for dark mode
+              suffixIcon: icon != null ? Icon(icon, color: Colors.white) : null,
+              border: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.transparent),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: CustomColor.mainColor),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -60,7 +77,6 @@ class MyTextField extends StatelessWidget {
 class PasswordTextField extends StatefulWidget {
   final TextEditingController? controller;
   final String? hintText;
-  final String? labelText;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
 
@@ -70,11 +86,10 @@ class PasswordTextField extends StatefulWidget {
     this.keyboardType,
     this.textInputAction,
     this.hintText,
-    this.labelText,
   });
 
   @override
-  _PasswordTextFieldState createState() => _PasswordTextFieldState();
+  State<PasswordTextField> createState() => _PasswordTextFieldState();
 }
 
 class _PasswordTextFieldState extends State<PasswordTextField> {
@@ -84,36 +99,55 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          vertical: MediaQuery.of(context).size.height * 0.0112,
-          horizontal: MediaQuery.of(context).size.width * 0.04),
-      child: TextFormField(
-        validator: (value) => InputValidators.validatePassword(value),
-        controller: widget.controller,
-        keyboardType: widget.keyboardType,
-        textInputAction: widget.textInputAction,
-        obscureText: obscureText,
-        decoration: InputDecoration(
-          labelText: widget.labelText ?? widget.hintText ?? 'Password',
-          hintText: widget.hintText ?? 'Password',
-          filled: true,
-          fillColor: CustomColor.secondarybackgroundColor,
-          suffixIcon: IconButton(
-            icon: Icon(obscureText ? Icons.visibility : Icons.visibility_off),
-            onPressed: () {
-              setState(() {
-                obscureText = !obscureText;
-              });
-            },
+        vertical: MediaQuery.of(context).size.height * 0.0112,
+        horizontal: MediaQuery.of(context).size.width * 0.04,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Password",
+            style: TextStyle(
+              color: Colors.white, // Adjust color for dark mode
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
           ),
-          border: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.transparent),
-            borderRadius: BorderRadius.circular(10),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.01,
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: CustomColor.mainColor),
-            borderRadius: BorderRadius.circular(10),
+          TextFormField(
+            validator: (value) => InputValidators.validatePassword(value),
+            controller: widget.controller,
+            keyboardType: widget.keyboardType,
+            textInputAction: widget.textInputAction,
+            obscureText: obscureText,
+            style: const TextStyle(
+                color: Colors.white), // Text color for dark mode
+            decoration: InputDecoration(
+              hintText: widget.hintText ?? 'Password',
+              suffixIcon: IconButton(
+                icon: Icon(
+                  obscureText ? Icons.visibility : Icons.visibility_off,
+                  color: Colors.white, // Adjust color for dark mode
+                ),
+                onPressed: () {
+                  setState(() {
+                    obscureText = !obscureText;
+                  });
+                },
+              ),
+              border: OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.transparent),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderSide: const BorderSide(color: CustomColor.mainColor),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
