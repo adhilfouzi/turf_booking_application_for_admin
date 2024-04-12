@@ -154,12 +154,6 @@ class CustomColor {
   });
   static const int _slotbookedAccentValue = 0xFFFFFAFA;
 
-  ///=======================================================================
-  ///=======================================================================
-  ///=======================================================================
-  ///=======================================================================
-  ///=======================================================================
-
   static const MaterialColor slotunavailable =
       MaterialColor(_slotunavailablePrimaryValue, <int, Color>{
     50: Color(0xFFF2F0F0),
@@ -213,4 +207,34 @@ class CustomColor {
     700: Color(0xFFFF4B4B),
   });
   static const int _unselectedAccentValue = 0xFFFA9C9C;
+
+  ///=======================================================================
+  ///=======================================================================
+  ///=======================================================================
+  ///=======================================================================
+  ///=======================================================================
+
+  static const MaterialColor darksecondarycolor =
+      MaterialColor(_darksecondarycolorPrimaryValue, <int, Color>{
+    50: Color(0xFFE6E6E6),
+    100: Color(0xFFC1C0C0),
+    200: Color(0xFF979696),
+    300: Color(0xFF6D6B6B),
+    400: Color(0xFF4E4C4C),
+    500: Color(_darksecondarycolorPrimaryValue),
+    600: Color(0xFF2A2727),
+    700: Color(0xFF232121),
+    800: Color(0xFF1D1B1B),
+    900: Color(0xFF121010),
+  });
+  static const int _darksecondarycolorPrimaryValue = 0xFF2F2C2C;
+
+  static const MaterialColor darksecondarycolorAccent =
+      MaterialColor(_darksecondarycolorAccentValue, <int, Color>{
+    100: Color(0xFFF26666),
+    200: Color(_darksecondarycolorAccentValue),
+    400: Color(0xFFF20000),
+    700: Color(0xFFD90000),
+  });
+  static const int _darksecondarycolorAccentValue = 0xFFEE3737;
 }

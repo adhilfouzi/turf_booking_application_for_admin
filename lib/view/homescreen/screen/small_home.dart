@@ -11,7 +11,8 @@ class SmallHomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: HomeWidget().appbar(title: 'Dashboard'),
-      drawer: HomeWidget().drawer(),
+      drawer: HomeWidget()
+          .drawer(screenHeight: screenHeight, context: context, key: 0),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
