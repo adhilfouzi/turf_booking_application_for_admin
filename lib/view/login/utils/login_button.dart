@@ -26,7 +26,8 @@ class LoginButton extends StatelessWidget {
         if (formKey.currentState!.validate()) {}
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: isDarkMode ? Colors.blueAccent : Colors.blue,
+        backgroundColor:
+            isDarkMode ? const Color.fromRGBO(68, 138, 255, 1) : Colors.blue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
