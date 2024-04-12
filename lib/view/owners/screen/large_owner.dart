@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:turf_booking_application_for_admin/view/owners/utils/owner_widget.dart';
 import '../../utils/home_widget.dart';
 
 class LargeOwnerScreen extends StatelessWidget {
@@ -9,6 +9,7 @@ class LargeOwnerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+    OwnerWidgt owner = OwnerWidgt();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -17,33 +18,23 @@ class LargeOwnerScreen extends StatelessWidget {
             HomeWidget().drawer(
               screenHeight: screenHeight,
               context: context,
-              key: 1, // Correct the key according to your implementation
+              key: 1,
             ),
-            const SizedBox(width: 16), // Add spacing between drawer and appbar
+            const SizedBox(width: 16),
             Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: HomeWidget().appbar(title: 'Turf List')),
-                  const SizedBox(
-                      height: 16), // Add spacing between appbar and text
-                  const Text(
-                    'Screen Size: Large',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Width: $screenWidth\nHeight: $screenHeight',
-                    style: const TextStyle(fontSize: 16),
-                    textAlign: TextAlign.center,
-                  ),
+                  owner.buildHeader(
+                      screenHeight: screenHeight, screenWidth: screenWidth),
+                  const SizedBox(height: 16),
+                  owner.buildTableHeader(screenWidth),
+                  const SizedBox(height: 8),
+                  owner.buildListView(
+                      screenHight: screenHeight, screenWidth: screenWidth),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

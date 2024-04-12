@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:turf_booking_application_for_admin/model/backend/firebase_options.dart';
-
-import 'view/homescreen/screen/homescreen.dart';
+import 'view/owners/screen/owners_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +21,11 @@ class MyApp extends StatelessWidget {
       title: 'Turf Booking Application For Admin',
       theme: ThemeData(
         colorScheme:
-            const ColorScheme.dark(primary: Color.fromARGB(255, 255, 255, 255)),
+            const ColorScheme.dark(primary: Color.fromARGB(255, 146, 68, 68)),
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),
-      home: const HomeScreen(),
+      home: const OwnersScreen(),
     );
   }
 }

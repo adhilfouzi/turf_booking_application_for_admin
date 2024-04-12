@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/home_widget.dart';
+import '../utils/owner_widget.dart';
 
 class ExtraSmallOwnerScreen extends StatelessWidget {
   const ExtraSmallOwnerScreen({super.key});
@@ -10,7 +11,7 @@ class ExtraSmallOwnerScreen extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: HomeWidget().appbar(title: 'Turf List'),
+      appBar: OwnerWidgt().appbar(title: 'Turf List'),
       drawer: HomeWidget()
           .drawer(screenHeight: screenHeight, context: context, key: 1),
       body: Center(
