@@ -25,7 +25,7 @@ class LargeOwnerScreen extends StatelessWidget {
                 children: [
                   ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: HomeWidget().appbar(title: 'Owners')),
+                      child: HomeWidget().appbar(title: 'Turf List')),
                   const SizedBox(
                       height: 16), // Add spacing between appbar and text
                   const Text(

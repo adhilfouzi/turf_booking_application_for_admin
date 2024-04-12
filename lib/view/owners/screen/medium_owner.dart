@@ -10,7 +10,7 @@ class MediumOwnerScreen extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: HomeWidget().appbar(title: 'Owners'),
+      appBar: HomeWidget().appbar(title: 'Turf List'),
       drawer: HomeWidget()
           .drawer(screenHeight: screenHeight, context: context, key: 1),
       body: Center(

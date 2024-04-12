@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:turf_booking_application_for_admin/view/homescreen/screen/homescreen.dart';
+import 'package:turf_booking_application_for_admin/view/login/screen/login_screen.dart';
 import 'package:turf_booking_application_for_admin/view/owners/screen/owners_screen.dart';
 import 'package:turf_booking_application_for_admin/view/user/screen/user_screen.dart';
 
@@ -50,34 +51,46 @@ class HomeWidget {
                   title: 'Dashboard',
                   context: context,
                   isSelected: key == 0,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const HomeScreen()))),
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()))),
               buildListTile(
                   icon: Icons.person,
                   title: 'Owners',
                   context: context,
                   isSelected: key == 1,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const OwnersScreen()))),
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => const OwnersScreen()))),
               buildListTile(
                   icon: Icons.request_page,
                   title: 'Requests',
                   context: context,
                   isSelected: key == 2,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const RequestScreen()))),
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => const RequestScreen()))),
               buildListTile(
                   icon: Icons.person,
                   title: 'Users',
                   context: context,
                   isSelected: key == 3,
-                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const UsersScreen()))),
+                  onTap: () => Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                          builder: (context) => const UsersScreen(),
+                          allowSnapshotting: false,
+                          fullscreenDialog: false,
+                          barrierDismissible: true,
+                          maintainState: false))),
               buildListTile(
                   icon: Icons.logout,
                   title: 'Logout',
                   context: context,
-                  isSelected: key == 4),
+                  isSelected: key == 4,
+                  onTap: () => Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                          builder: (context) => const LoginScreen()),
+                      (route) => false)),
             ],
           ),
         ),
@@ -105,6 +118,9 @@ class HomeWidget {
           () {
             Navigator.of(context).pop(); // Close the drawer
             // Perform other actions
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (context) => const OwnersScreen(),
+            ));
           },
     );
   }
