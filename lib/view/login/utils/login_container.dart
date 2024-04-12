@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:turf_booking_application_for_admin/view/homescreen/screen/homescreen.dart';
 import '../../../model/controller/validator.dart';
 import '../../../model/utils/portion/textfield.dart';
-import '../../../model/utils/screen/maxwidth.dart';
+import '../../utils/screen/maxwidth.dart';
 
 class LoginContainer extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();

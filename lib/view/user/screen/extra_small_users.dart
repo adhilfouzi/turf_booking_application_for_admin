@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../utils/home_widget.dart';
 
-class ExtraSmallHomeScreen extends StatelessWidget {
-  const ExtraSmallHomeScreen({super.key});
+class ExtraSmallUsersScreen extends StatelessWidget {
+  const ExtraSmallUsersScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: HomeWidget().appbar(title: 'Dashboard'),
+      appBar: HomeWidget().appbar(title: 'User'),
       drawer: HomeWidget()
-          .drawer(screenHeight: screenHeight, context: context, key: 0),
+          .drawer(screenHeight: screenHeight, context: context, key: 3),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

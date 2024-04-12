@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../utils/home_widget.dart';
 
-class LargeHomeScreen extends StatelessWidget {
-  const LargeHomeScreen({super.key});
+class LargeRequestScreen extends StatelessWidget {
+  const LargeRequestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class LargeHomeScreen extends StatelessWidget {
             HomeWidget().drawer(
               screenHeight: screenHeight,
               context: context,
-              key: 0, // Correct the key according to your implementation
+              key: 2, // Correct the key according to your implementation
             ),
             const SizedBox(width: 16), // Add spacing between drawer and appbar
             Expanded(
@@ -25,7 +25,7 @@ class LargeHomeScreen extends StatelessWidget {
                 children: [
                   ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: HomeWidget().appbar(title: 'Dashboard')),
+                      child: HomeWidget().appbar(title: 'Owners')),
                   const SizedBox(
                       height: 16), // Add spacing between appbar and text
                   const Text(

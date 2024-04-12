@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/home_widget.dart';
+import '../../utils/home_widget.dart';
 
 class MediumHomeScreen extends StatelessWidget {
   const MediumHomeScreen({super.key});

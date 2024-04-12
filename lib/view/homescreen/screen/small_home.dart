@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:turf_booking_application_for_admin/view/homescreen/utils/home_widget.dart';
+import '../../utils/home_widget.dart';
 
 class SmallHomeScreen extends StatelessWidget {
   const SmallHomeScreen({super.key});

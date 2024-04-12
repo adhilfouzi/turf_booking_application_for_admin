@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:turf_booking_application_for_admin/view/homescreen/screen/homescreen.dart';
+import 'package:turf_booking_application_for_admin/view/owners/screen/owners_screen.dart';
+import 'package:turf_booking_application_for_admin/view/user/screen/user_screen.dart';
 
 import '../../../model/utils/const/colors.dart';
 import '../../../model/utils/const/image_name.dart';
+import '../request/screen/request_screen.dart';
 
 class HomeWidget {
   PreferredSizeWidget appbar({required String title}) {
@@ -45,22 +49,30 @@ class HomeWidget {
                   icon: Icons.dashboard,
                   title: 'Dashboard',
                   context: context,
-                  isSelected: key == 0),
+                  isSelected: key == 0,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()))),
               buildListTile(
                   icon: Icons.person,
                   title: 'Owners',
                   context: context,
-                  isSelected: key == 1),
+                  isSelected: key == 1,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const OwnersScreen()))),
               buildListTile(
                   icon: Icons.request_page,
                   title: 'Requests',
                   context: context,
-                  isSelected: key == 2),
+                  isSelected: key == 2,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const RequestScreen()))),
               buildListTile(
                   icon: Icons.person,
                   title: 'Users',
                   context: context,
-                  isSelected: key == 3),
+                  isSelected: key == 3,
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const UsersScreen()))),
               buildListTile(
                   icon: Icons.logout,
                   title: 'Logout',
@@ -89,10 +101,11 @@ class HomeWidget {
                 ? Colors.blue
                 : Colors.white), // Set title text color
       ),
-      onTap: () {
-        Navigator.of(context).pop(); // Close the drawer
-        // Perform other actions
-      },
+      onTap: onTap ??
+          () {
+            Navigator.of(context).pop(); // Close the drawer
+            // Perform other actions
+          },
     );
   }
 }
